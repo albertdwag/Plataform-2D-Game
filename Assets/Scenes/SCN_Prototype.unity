@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 902525417}
   - component: {fileID: 902525416}
   - component: {fileID: 902525415}
+  - component: {fileID: 902525420}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -268,7 +269,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -339,6 +340,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902525420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902525414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8238948ba387c074eb0666c954b94db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myRigidbody: {fileID: 902525416}
+  _moveLeft: 100
+  _moveRight: 97
+  _speed: 10
 --- !u!1 &1278354939
 GameObject:
   m_ObjectHideFlags: 0
