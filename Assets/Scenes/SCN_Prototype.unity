@@ -353,9 +353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myRigidbody: {fileID: 902525416}
-  _moveLeft: 100
-  _moveRight: 97
   _speed: 10
+  _forceJump: 15
+  _moveLeftButton: 100
+  _moveRightButton: 97
+  _spaceButton: 32
 --- !u!1 &1278354939
 GameObject:
   m_ObjectHideFlags: 0

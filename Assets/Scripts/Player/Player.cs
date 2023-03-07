@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Key Binding")]
+    [SerializeField] private KeyCode _moveLeftButton = KeyCode.D;
+    [SerializeField] private KeyCode _moveRightButton = KeyCode.A;
+    [SerializeField] private KeyCode _spaceButton = KeyCode.Space;
+
     [SerializeField] private Rigidbody2D _myRigidbody;
-    [SerializeField] private KeyCode _moveLeft = KeyCode.D;
-    [SerializeField] private KeyCode _moveRight = KeyCode.A;
+    [SerializeField] private Vector2 friction = new Vector2(-.1f, 0);
     [SerializeField] private float _speed;
+    [SerializeField] private float _forceJump;
+
 
     private void Update()
     {
@@ -17,15 +23,22 @@ public class Player : MonoBehaviour
 
     private void HandleMove()
     {
-        if (Input.GetKey(_moveLeft))
+        if (Input.GetKey(_moveLeftButton))
             _myRigidbody.velocity = new Vector2(_speed, _myRigidbody.velocity.y);
 
-        if (Input.GetKey(_moveRight))
+        else if (Input.GetKey(_moveRightButton))
             _myRigidbody.velocity = new Vector2(-_speed, _myRigidbody.velocity.y);
+
+        if (_myRigidbody.velocity.x > 0)
+            _myRigidbody.velocity += friction;
+
+        else if (_myRigidbody.velocity.x < 0)
+            _myRigidbody.velocity -= friction;
     }
 
     private void HandleJump()
     {
-
+        if (Input.GetKeyDown(_spaceButton))
+            _myRigidbody.velocity = Vector3.up * _forceJump;
     }
 }
