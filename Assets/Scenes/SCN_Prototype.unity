@@ -355,11 +355,13 @@ MonoBehaviour:
   moveLeftButton: 100
   moveRightButton: 97
   jumpButton: 32
+  springButton: 306
   myRigidbody: {fileID: 902525416}
-  friction: {x: 0, y: 0}
-  speed: 0
-  forceJump: 0
-  maxJumpVelocity: 0
+  friction: {x: -0.1, y: 0}
+  speed: 10
+  runningSpeed: 15
+  forceJump: 18
+  maxJumpVelocity: 5
 --- !u!1 &1149811351
 GameObject:
   m_ObjectHideFlags: 0
