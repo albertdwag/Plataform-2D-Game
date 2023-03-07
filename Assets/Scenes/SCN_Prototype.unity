@@ -352,14 +352,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8238948ba387c074eb0666c954b94db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveLeftButton: 100
-  _moveRightButton: 97
-  _jumpButton: 32
-  _myRigidbody: {fileID: 902525416}
-  friction: {x: -0.1, y: 0}
-  _speed: 10
-  _forceJump: 18
-  _maxJumpVelocity: 5
+  moveLeftButton: 100
+  moveRightButton: 97
+  jumpButton: 32
+  myRigidbody: {fileID: 902525416}
+  friction: {x: 0, y: 0}
+  speed: 0
+  forceJump: 0
+  maxJumpVelocity: 0
 --- !u!1 &1149811351
 GameObject:
   m_ObjectHideFlags: 0
