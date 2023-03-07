@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +11,19 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode jumpButton = KeyCode.Space;
     [SerializeField] private KeyCode springButton = KeyCode.LeftControl;
 
+    [Header("Movement Settings")]
     [SerializeField] private Rigidbody2D myRigidbody;
     [SerializeField] private Vector2 friction = new Vector2(-.1f, 0);
-    [SerializeField] private float speed;
-    [SerializeField] private float runningSpeed;
-    [SerializeField] private float forceJump;
-    [SerializeField] private float minimumJumpHeight;
+    [SerializeField] private float speed = 10;
+    [SerializeField] private float runningSpeed = 15;
+    [SerializeField] private float forceJump = 18;
+    [SerializeField] private float minJumpHeight = 5;
+
+    [Header("Animation Settings")]
+    [SerializeField] private float jumpScaleY = 1.5f;
+    [SerializeField] private float jumpScaleX = 0.7f;
+    [SerializeField] private float animationDuration = 0.3f;
+    [SerializeField] private Ease ease = Ease.OutBack;
 
 
     private void Update()
@@ -43,9 +51,22 @@ public class Player : MonoBehaviour
     private void HandleJump()
     {
         if (Input.GetKeyDown(jumpButton) && Mathf.Abs(myRigidbody.velocity.y) < 0.001f)
+        {
+            AnimationJump();
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, forceJump);
+        }
 
-        else if (Input.GetKeyUp(jumpButton) && myRigidbody.velocity.y > minimumJumpHeight)
-            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, minimumJumpHeight);
+        else if (Input.GetKeyUp(jumpButton) && myRigidbody.velocity.y > minJumpHeight)
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, minJumpHeight);
+    }
+
+    private void AnimationJump()
+    {
+        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration)
+            .SetLoops(2, LoopType.Yoyo)
+            .SetEase(ease);
+        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration)
+            .SetLoops(2, LoopType.Yoyo)
+            .SetEase(ease);
     }
 }
