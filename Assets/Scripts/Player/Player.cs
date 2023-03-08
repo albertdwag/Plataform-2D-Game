@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float minJumpHeight = 5;
 
     [Header("Animation Settings")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private string runBool = "Running";
     [SerializeField] private float jumpScaleY = 1.5f;
     [SerializeField] private float jumpScaleX = 0.7f;
     [SerializeField] private float animationDuration = 0.3f;
@@ -35,9 +37,15 @@ public class Player : MonoBehaviour
     private void HandleMove()
     {
         if (Input.GetKey(moveLeftButton))
+        {
             myRigidbody.velocity = new Vector2(Input.GetKey(springButton) ? runningSpeed : speed, myRigidbody.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
+        }
         else if (Input.GetKey(moveRightButton))
+        {
             myRigidbody.velocity = new Vector2(Input.GetKey(springButton) ? -runningSpeed : -speed, myRigidbody.velocity.y);
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
 
         if (Mathf.Abs(myRigidbody.velocity.x) < 0.1f)
             myRigidbody.velocity = new Vector2(0, myRigidbody.velocity.y);
@@ -46,6 +54,8 @@ public class Player : MonoBehaviour
             myRigidbody.velocity += friction;
         else if (myRigidbody.velocity.x < 0)
             myRigidbody.velocity -= friction;
+
+        AnimationMovement();
     }
 
     private void HandleJump()
@@ -65,8 +75,16 @@ public class Player : MonoBehaviour
         myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration)
             .SetLoops(2, LoopType.Yoyo)
             .SetEase(ease);
-        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration)
-            .SetLoops(2, LoopType.Yoyo)
-            .SetEase(ease);
+        //myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration)
+        //    .SetLoops(2, LoopType.Yoyo)
+        //    .SetEase(ease);
+    }
+
+    private void AnimationMovement()
+    {
+        if (myRigidbody.velocity.magnitude > 0)
+            animator.SetBool(runBool, true);
+        else
+            animator.SetBool(runBool, false);
     }
 }
