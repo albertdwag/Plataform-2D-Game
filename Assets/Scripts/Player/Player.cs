@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float animationDuration = 0.3f;
     [SerializeField] private Ease ease = Ease.OutBack;
 
-
     private void Update()
     {
         HandleJump();
