@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private string runBool = "Running";
     [SerializeField] private float jumpScaleY = 1.5f;
-    [SerializeField] private float jumpScaleX = 0.7f;
+    //[SerializeField] private float jumpScaleX = 0.7f;
     [SerializeField] private float animationDuration = 0.3f;
     [SerializeField] private Ease ease = Ease.OutBack;
 
