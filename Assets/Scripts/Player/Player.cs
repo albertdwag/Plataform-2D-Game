@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode springButton = KeyCode.LeftControl;
 
     [Header("Movement Settings")]
+    [SerializeField] private HealthBase _healthBase;
     [SerializeField] private Rigidbody2D myRigidbody;
     [SerializeField] private Vector2 friction = new Vector2(-.1f, 0);
     [SerializeField] private float speed = 10;
@@ -21,16 +22,29 @@ public class Player : MonoBehaviour
 
     [Header("Animation Settings")]
     [SerializeField] private Animator animator;
+    [SerializeField] private string triggerDeath = "Death";
     [SerializeField] private string runBool = "Running";
     [SerializeField] private float jumpScaleY = 1.5f;
-    //[SerializeField] private float jumpScaleX = 0.7f;
+    //[SerializeField] private float jumpScaleX = 0.7f;w
     [SerializeField] private float animationDuration = 0.3f;
     [SerializeField] private Ease ease = Ease.OutBack;
+
+    private void Awake()
+    {
+        if (_healthBase != null)
+            _healthBase.OnKill += OnPlayerKill;
+    }
 
     private void Update()
     {
         HandleJump();
         HandleMove();
+    }
+
+    private void OnPlayerKill()
+    {
+        _healthBase.OnKill -= OnPlayerKill;
+        animator.SetTrigger(triggerDeath);
     }
 
     private void HandleMove()

@@ -5,10 +5,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int damage = 10;
+    
     public string triggerAttack = "Attack";
+    public string triggerDeath = "Death";
 
     public Animator animator;
     public HealthBase healthBase;
+
+    private void Awake()
+    {
+        if (healthBase != null)
+            healthBase.OnKill += OnEnemyKill;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,9 +32,20 @@ public class Enemy : MonoBehaviour
             
     }
 
+    private void OnEnemyKill()
+    {
+        healthBase.OnKill -= OnEnemyKill;
+        PlayKillAnimation();
+    }
+
     private void PlayAttackAnimation()
     {
         animator.SetTrigger(triggerAttack);
+    }
+
+    private void PlayKillAnimation()
+    {
+        animator.SetTrigger(triggerDeath);
     }
 
     public void Damage(int amount)
