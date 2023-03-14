@@ -9,6 +9,8 @@ public class FlashColor : MonoBehaviour
     public Color color = Color.red;
     public float durationFlash = .3f;
 
+    private Tween _currentTween;
+
     private void OnValidate()
     {
         spriteRenderers = new List<SpriteRenderer>();
@@ -18,14 +20,14 @@ public class FlashColor : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-            Flash();
-    }
-
     public void Flash()
     {
+        if (_currentTween != null)
+        {
+            _currentTween.Kill();
+            spriteRenderers.ForEach(i => i.color = Color.white);
+        }
+
         foreach (var c in spriteRenderers)
             c.DOColor(color, durationFlash).SetLoops(2, LoopType.Yoyo);
     }
