@@ -9,8 +9,8 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private TextMeshProUGUI _coinsText;
 
-    public void UpdateText()
+    public static void UpdateUI ()
     {
-        _coinsText.text = "x" + ItemManager.Instance.coins.ToString();
+        Instance._coinsText.text = "x" + ItemManager.Instance.coins.ToString();
     }
 }

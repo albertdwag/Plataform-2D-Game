@@ -20,6 +20,6 @@ public class ItemManager : Singleton<ItemManager>
     public void AddCoins(int amount = 1)
     {
         coins += amount;
-        UIManager.Instance.UpdateText();
+        UIManager.UpdateUI();
     }
 }
