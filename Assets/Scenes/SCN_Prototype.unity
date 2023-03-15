@@ -4367,8 +4367,7 @@ MonoBehaviour:
   animator: {fileID: 1305880757}
   triggerDeath: Death
   runBool: Running
-  jumpScaleY: 1.5
-  animationDuration: 0.3
+  animationPlayer: {fileID: 11400000, guid: a7a1e5cec4f5e3441877c926c54851ee, type: 2}
   ease: 27
 --- !u!50 &1662550321
 Rigidbody2D:

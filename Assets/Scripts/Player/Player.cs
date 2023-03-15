@@ -24,9 +24,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private string triggerDeath = "Death";
     [SerializeField] private string runBool = "Running";
-    [SerializeField] private float jumpScaleY = 1.5f;
+    [SerializeField] private SOAnimationPlayer animationPlayer;
     //[SerializeField] private float jumpScaleX = 0.7f;w
-    [SerializeField] private float animationDuration = 0.3f;
     [SerializeField] private Ease ease = Ease.OutBack;
 
     private void Awake()
@@ -85,7 +84,7 @@ public class Player : MonoBehaviour
 
     private void AnimationJump()
     {
-        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration)
+        myRigidbody.transform.DOScaleY(animationPlayer.JumpScaleY, animationPlayer.animationDuration)
             .SetLoops(2, LoopType.Yoyo)
             .SetEase(ease);
         //myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration)
