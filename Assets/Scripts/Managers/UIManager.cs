@@ -11,6 +11,6 @@ public class UIManager : Singleton<UIManager>
 
     public static void UpdateUI ()
     {
-        Instance._coinsText.text = "x" + ItemManager.Instance.coins.ToString();
+        //Instance._coinsText.text = "x" + ItemManager.Instance.coins.value.ToString();
     }
 }

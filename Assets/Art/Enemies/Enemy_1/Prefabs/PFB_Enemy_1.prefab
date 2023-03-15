@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 4308708547810806515}
   - component: {fileID: 9000123747895160758}
   - component: {fileID: 6292049262233338388}
+  - component: {fileID: 2185231163808221487}
   m_Layer: 0
   m_Name: PFB_Enemy_1
   m_TagString: Untagged
@@ -431,6 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   triggerAttack: Attack
+  triggerDeath: Death
   animator: {fileID: 2403329696302037006}
   healthBase: {fileID: 6292049262233338388}
 --- !u!114 &9000123747895160758
@@ -452,7 +454,7 @@ MonoBehaviour:
   - {fileID: 8622257899716607877}
   - {fileID: 4402658883949824882}
   - {fileID: 3096084783782573798}
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 0.42352942, b: 0.42352942, a: 1}
   durationFlash: 0.3
 --- !u!114 &6292049262233338388
 MonoBehaviour:
@@ -467,8 +469,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLife: 10
+  timeToDestroy: 1
   destroyOnKill: 1
   _flashColor: {fileID: 9000123747895160758}
+--- !u!61 &2185231163808221487
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090786764695304946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0634408, y: 3.3306005}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9666395, y: 6.709602}
+  m_EdgeRadius: 0
 --- !u!1 &3840710139504160895
 GameObject:
   m_ObjectHideFlags: 0

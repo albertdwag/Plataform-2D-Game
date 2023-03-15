@@ -1734,6 +1734,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 624433783}
   - {fileID: 1385242458}
   m_Father: {fileID: 2074250701}
   m_RootOrder: 0
@@ -1768,17 +1769,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624433782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2074250701}
-  m_RootOrder: 1
+  m_Father: {fileID: 595103651}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -882.5, y: 483.13}
+  m_AnchoredPosition: {x: -54.5, y: -0.056488037}
   m_SizeDelta: {x: 50.393, y: 50.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624433784
@@ -2375,37 +2376,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8073972946613542793, guid: 3de838754c767a446a5473969062a84e, type: 3}
   m_PrefabInstance: {fileID: 1005823009}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1005823011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3090786764695304946, guid: 3de838754c767a446a5473969062a84e, type: 3}
-  m_PrefabInstance: {fileID: 1005823009}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1005823013
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005823011}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0634408, y: 3.3306005}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.9666395, y: 6.709602}
-  m_EdgeRadius: 0
 --- !u!212 &1022372769 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9069580248349405312, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -3354,6 +3324,7 @@ GameObject:
   - component: {fileID: 1385242458}
   - component: {fileID: 1385242460}
   - component: {fileID: 1385242459}
+  - component: {fileID: 1385242461}
   m_Layer: 5
   m_Name: CoinsText
   m_TagString: Untagged
@@ -3374,7 +3345,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 595103651}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3478,6 +3449,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385242457}
   m_CullTransparentMesh: 1
+--- !u!114 &1385242461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385242457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724dd26e292c7ff4a83ec36c254c458f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soInt: {fileID: 11400000, guid: 0b2a6d1da570ab84dac5dff4e467e524, type: 2}
+  uiTextValue: {fileID: 1385242459}
 --- !u!4 &1403027928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2507352412357690270, guid: 2fa159685bbc1ec4eb20c3d1c5ebb92d, type: 3}
@@ -3958,7 +3943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526f5468fbb3ca440a0ead54b62f6949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: 0b2a6d1da570ab84dac5dff4e467e524, type: 2}
 --- !u!4 &1561008552
 Transform:
   m_ObjectHideFlags: 0
@@ -4480,7 +4465,7 @@ MonoBehaviour:
   - {fileID: 735183013}
   - {fileID: 1627748514}
   - {fileID: 812820264}
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
   durationFlash: 0.3
 --- !u!212 &1668912790 stripped
 SpriteRenderer:
@@ -5560,7 +5545,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 595103651}
-  - {fileID: 624433783}
   m_Father: {fileID: 1223059606}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
