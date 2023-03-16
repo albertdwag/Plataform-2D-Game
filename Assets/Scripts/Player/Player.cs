@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(_playerSetup.jumpButton) && Mathf.Abs(myRigidbody.velocity.y) < 0.001f)
         {
             AnimationJump();
-            PlayJumpVFX();
+            PlayJumpVFX();  
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, _playerSetup.forceJump);
         }
 
@@ -79,7 +79,8 @@ public class Player : MonoBehaviour
 
     private void PlayJumpVFX()
     {
-        if (jumpVFX != null) jumpVFX.Play();
+        VFXManager.Instance.PlayVFXByType(VFXManager.VFXType.JUMP, transform.position);
+        //if (jumpVFX != null) jumpVFX.Play();
     }
 
     private void AnimationMovement()

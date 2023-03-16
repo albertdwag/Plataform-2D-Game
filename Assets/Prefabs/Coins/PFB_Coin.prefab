@@ -160,7 +160,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 731576637879477472, guid: 28c6f78c8589ffd47a3ac3bdac810592, type: 3}
       propertyPath: m_Name
-      value: PFB_ParticleSystem
+      value: PFB_ParticleSystem_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 7652686997713804932, guid: 28c6f78c8589ffd47a3ac3bdac810592, type: 3}
       propertyPath: m_RootOrder
