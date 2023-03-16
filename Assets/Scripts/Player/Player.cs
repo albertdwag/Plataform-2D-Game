@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SOPlayerSetup _playerSetup;
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D myRigidbody;
+    [SerializeField] private ParticleSystem jumpVFX;
 
     private void Awake()
     {
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(_playerSetup.jumpButton) && Mathf.Abs(myRigidbody.velocity.y) < 0.001f)
         {
             AnimationJump();
+            PlayJumpVFX();
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, _playerSetup.forceJump);
         }
 
@@ -75,6 +77,11 @@ public class Player : MonoBehaviour
         //    .SetEase(ease);
     }
 
+    private void PlayJumpVFX()
+    {
+        if (jumpVFX != null) jumpVFX.Play();
+    }
+
     private void AnimationMovement()
     {
         if (myRigidbody.velocity.magnitude > 0)
@@ -82,4 +89,4 @@ public class Player : MonoBehaviour
         else
             animator.SetBool(_playerSetup.runBool, false);
     }
-}
+} 
