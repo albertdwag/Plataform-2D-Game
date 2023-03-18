@@ -9,6 +9,9 @@ public class ItemCollactableBase : MonoBehaviour
     public float timeToHide = 3f;
     public GameObject graphicItem;
 
+    [Header("Sounds")]
+    public AudioSource audioSource;
+
     private void Awake()
     {
         //if (particles != null) particles.transform.SetParent(null);
@@ -18,6 +21,8 @@ public class ItemCollactableBase : MonoBehaviour
     {
         if (collision.transform.CompareTag(compareTag))
             Collect();
+
+        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     protected virtual void Collect()
@@ -35,5 +40,6 @@ public class ItemCollactableBase : MonoBehaviour
     protected virtual void OnCollect()
     {
         if (particles != null) particles.Play();
+        if (audioSource != null) audioSource.Play();
     }
 }
