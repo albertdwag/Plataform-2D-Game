@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &437922146405299532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6262235625578156018}
+  m_Layer: 0
+  m_Name: Footstep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6262235625578156018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437922146405299532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6955194977754866028}
+  - {fileID: 877847404853522044}
+  - {fileID: 8576726801273065694}
+  m_Father: {fileID: 2020496530311868431}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2155219300972752823
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,9 +62,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6955194977754866028}
-  - {fileID: 877847404853522044}
-  - {fileID: 8576726801273065694}
+  - {fileID: 6262235625578156018}
+  - {fileID: 512476874464587894}
   m_Father: {fileID: 8064066127656389728}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,7 +78,7 @@ GameObject:
   - component: {fileID: 877847404853522044}
   - component: {fileID: 2456353399354702210}
   m_Layer: 0
-  m_Name: AudioSource (1)
+  m_Name: AudioSource(Footstep) 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,12 +91,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4887985451842512457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2020496530311868431}
+  m_Father: {fileID: 6262235625578156018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2456353399354702210
@@ -446,8 +479,8 @@ MonoBehaviour:
   - {fileID: 8064066126691949247}
   - {fileID: 8064066126210917330}
   m_Bounds:
-    m_Center: {x: 0.000000059604645, y: -0.0029051304, z: 0.01499939}
-    m_Extent: {x: 0.43500012, y: 0.7802849, z: 0.01499939}
+    m_Center: {x: 0.000000059604645, y: -0.0029046535, z: 0.0149998665}
+    m_Extent: {x: 0.43500012, y: 0.7802844, z: 0.0149998665}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -585,8 +618,8 @@ MonoBehaviour:
   - {fileID: 8064066125793564241}
   - {fileID: 8064066126717708790}
   m_Bounds:
-    m_Center: {x: 0.0030914247, y: 0.0007439554, z: 0.007700176}
-    m_Extent: {x: 0.38191003, y: 0.33776525, z: 0.002300053}
+    m_Center: {x: 0.0030914247, y: 0.0007439554, z: 0.0076994416}
+    m_Extent: {x: 0.38191003, y: 0.33776525, z: 0.0022998336}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1245,7 +1278,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8064066126220741783}
   m_Bounds:
-    m_Center: {x: -0.00003695488, y: -0.00046801567, z: 0}
+    m_Center: {x: -0.00003695488, y: -0.00046753883, z: 0}
     m_Extent: {x: 2.115001, y: 1.6355698, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1458,8 +1491,8 @@ MonoBehaviour:
   - {fileID: 8064066125793564241}
   - {fileID: 8064066126717708790}
   m_Bounds:
-    m_Center: {x: -0.0014995933, y: -0.0003745556, z: 0.0050001144}
-    m_Extent: {x: 0.36704063, y: 0.43568558, z: 0.0050001144}
+    m_Center: {x: -0.0014995933, y: -0.00037550926, z: 0.0049996376}
+    m_Extent: {x: 0.36704063, y: 0.43568558, z: 0.0049996376}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1599,7 +1632,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8064066126691949247}
   m_Bounds:
-    m_Center: {x: -0.00007984042, y: -0.000060111284, z: 0.010000229}
+    m_Center: {x: -0.00007984042, y: -0.000060111284, z: 0.009999275}
     m_Extent: {x: 0.25952005, y: 0.28413004, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1740,7 +1773,7 @@ MonoBehaviour:
   - {fileID: 8064066125825778466}
   - {fileID: 8064066126544381029}
   m_Bounds:
-    m_Center: {x: 0, y: -0.0000006556511, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.43499994, y: 0.515, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1846,7 +1879,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8064066127250334368}
   m_Bounds:
-    m_Center: {x: 0.0005648434, y: -0.00001001358, z: 0.02999878}
+    m_Center: {x: 0.0005648434, y: -0.00001001358, z: 0.029999733}
     m_Extent: {x: 0.34943494, y: 0.40556997, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2155,8 +2188,8 @@ MonoBehaviour:
   - {fileID: 8064066126072654540}
   - {fileID: 8064066126901480531}
   m_Bounds:
-    m_Center: {x: 0, y: -0.0019506216, z: 0.01499939}
-    m_Extent: {x: 0.43499994, y: 0.78143936, z: 0.01499939}
+    m_Center: {x: 0.00000011920929, y: -0.0019501448, z: 0.0149998665}
+    m_Extent: {x: 0.43499994, y: 0.7814398, z: 0.0149998665}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2261,7 +2294,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8064066127737047391}
   m_Bounds:
-    m_Center: {x: -0.000105232, y: -0.00015595555, z: 0.02999878}
+    m_Center: {x: -0.00010499358, y: -0.00015500188, z: 0.029999733}
     m_Extent: {x: 0.32356507, y: 0.398305, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2571,8 +2604,8 @@ MonoBehaviour:
   - {fileID: 8064066126707183611}
   - {fileID: 8064066127223576435}
   m_Bounds:
-    m_Center: {x: -0.004635304, y: -0.019620597, z: 0.0050001144}
-    m_Extent: {x: 0.3706953, y: 0.44074064, z: 0.0050001144}
+    m_Center: {x: -0.0046352446, y: -0.01962012, z: 0.0049996376}
+    m_Extent: {x: 0.37069535, y: 0.44074017, z: 0.0049996376}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -3054,8 +3087,8 @@ MonoBehaviour:
   - {fileID: 8064066126707183611}
   - {fileID: 8064066127223576435}
   m_Bounds:
-    m_Center: {x: -0.00000059604645, y: -0.0016770065, z: 0.0072648535}
-    m_Extent: {x: 0.38500014, y: 0.33832496, z: 0.0027353754}
+    m_Center: {x: -0.00000059604645, y: -0.0016760528, z: 0.0072641606}
+    m_Extent: {x: 0.38500014, y: 0.33832496, z: 0.0027351147}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -3324,11 +3357,42 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8064066126072654540}
   m_Bounds:
-    m_Center: {x: 0.0001500845, y: -0.0002039671, z: 0.010000229}
+    m_Center: {x: 0.00015032291, y: -0.0002039671, z: 0.009999275}
     m_Extent: {x: 0.269, y: 0.28407514, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!1 &8328692912068465698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512476874464587894}
+  m_Layer: 0
+  m_Name: Jump
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512476874464587894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328692912068465698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2020496530311868431}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8820236394351095418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3404,7 @@ GameObject:
   - component: {fileID: 8576726801273065694}
   - component: {fileID: 5901318404758155946}
   m_Layer: 0
-  m_Name: AudioSource (2)
+  m_Name: AudioSource(Footstep) 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3353,12 +3417,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8820236394351095418}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2020496530311868431}
+  m_Father: {fileID: 6262235625578156018}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &5901318404758155946
@@ -3468,7 +3532,7 @@ GameObject:
   - component: {fileID: 6955194977754866028}
   - component: {fileID: 602648108724754318}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: AudioSource(Footstep)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3481,12 +3545,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9012724069509172872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2020496530311868431}
+  m_Father: {fileID: 6262235625578156018}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &602648108724754318

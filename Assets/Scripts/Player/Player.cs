@@ -8,9 +8,10 @@ public class Player : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private HealthBase _healthBase;
     [SerializeField] private SOPlayerSetup _playerSetup;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D myRigidbody;
-    [SerializeField] private ParticleSystem jumpVFX;
+    [SerializeField] private ParticleSystem _jumpVFX;
+    [SerializeField] private AudioSource _jumpSound;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
     private void OnPlayerKill()
     {
         _healthBase.OnKill -= OnPlayerKill;
-        animator.SetTrigger(_playerSetup.triggerDeath);
+        _animator.SetTrigger(_playerSetup.triggerDeath);
     }
 
     private void HandleMove()
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(_playerSetup.jumpButton) && Mathf.Abs(myRigidbody.velocity.y) < 0.001f)
         {
+            _jumpSound.Play();
             AnimationJump();
             PlayJumpVFX();  
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, _playerSetup.forceJump);
@@ -86,8 +88,8 @@ public class Player : MonoBehaviour
     private void AnimationMovement()
     {
         if (myRigidbody.velocity.magnitude > 0)
-            animator.SetBool(_playerSetup.runBool, true);
+            _animator.SetBool(_playerSetup.runBool, true);
         else
-            animator.SetBool(_playerSetup.runBool, false);
+            _animator.SetBool(_playerSetup.runBool, false);
     }
 } 
