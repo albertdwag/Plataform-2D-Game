@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
     private void OnEnemyKill()
     {
         healthBase.OnKill -= OnEnemyKill;
+        gameObject.GetComponent<Collider2D>().enabled = false;
         PlayKillAnimation();
     }
 
